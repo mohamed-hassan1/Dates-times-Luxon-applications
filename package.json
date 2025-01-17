@@ -1,0 +1,27 @@
+{
+  "name": "dates-times-luxon-applications",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "Dates",
+    "Times",
+    "Luxon",
+    "Library",
+    "Applications"
+  ],
+  "homepage": "https://github.com/mohamed-hassan1/Dates-times-Luxon-applications#readme",
+  "bugs": {
+    "url": "https://github.com/mohamed-hassan1/Dates-times-Luxon-applications/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamed-hassan1/Dates-times-Luxon-applications.git"
+  },
+  "license": "ISC",
+  "author": "Dev Mohamed Hassan",
+  "type": "module",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
