@@ -1,7 +1,7 @@
 {
   "name": "dates-times-luxon-applications",
   "version": "1.0.0",
-  "description": "",
+  "description": "Applications of Dates and Times using Luxon Library",
   "keywords": [
     "Dates",
     "Times",
