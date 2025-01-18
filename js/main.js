@@ -12,6 +12,12 @@ Task requirements:
 - create a paragraph from the formated data
 - save new data in a new file
 
-*/
+Output:
 
-// you will not copy the code .. you will write it yourself. character by character.
+2,male,Dylan Haugen,dhaugen1@surveymonkey.com,10/19/1984,05:59 AM,MA,Morocco,en,UTC+1
+
+{id} {username} is born in {Counter} on {Month} {Day}, {Year} at {Time}
+his age in {Month} {Year} will be alomost {age} years
+his contact inforamtion: {email}
+
+*/
