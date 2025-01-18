@@ -21,3 +21,14 @@ his age in {Month} {Year} will be alomost {age} years
 his contact inforamtion: {email}
 
 */
+
+import * as fs from 'fs';
+
+let data = fs.readFileSync('./input.csv', {encoding: 'utf8', flag: 'r'});
+
+let data_arr = data.split('\n');
+
+data_arr.forEach(item => {
+  item = item.split(',');
+  
+})
