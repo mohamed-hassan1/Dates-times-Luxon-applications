@@ -23,12 +23,39 @@ his contact inforamtion: {email}
 */
 
 import * as fs from 'fs';
+import {DateTime} from 'luxon';
 
 let data = fs.readFileSync('./input.csv', {encoding: 'utf8', flag: 'r'});
 
-let data_arr = data.split('\n');
+let data_arr = data.split('\n'),
+    txt = '';
 
 data_arr.forEach(item => {
-  item = item.split(',');
+  let arr = item.split(',');
+  /*
+    [0]   Id
+    [1]   Gender
+    [2]   Full Name
+    [3]   Email
+    [4]   Date
+    [5]   Time
+    [6]   Country Code
+    [7]   Country
+    [8]   Language Code
+    [9]   Timezone
+  */
+
+  let full = DateTime.fromFormat(`${arr[4]} ${arr[5]}`, 'MM/dd/yyyy t', {zone: arr[9].trim()}),
+      localeTime = full.setLocale(`${arr[8]}-${arr[6]}`),
+      gender = null;
+
+  arr[1] == 'male'? gender = 'his' : gender = 'her';
   
-})
+  txt = `${arr[0]}: ${arr[2]} is born in ${arr[7]} on ${localeTime.toLocaleString(DateTime.DATE_MED)} at ${localeTime.toLocaleString(DateTime.TIME_SIMPLE)}
+${gender} age in ${full.toLocaleString(DateTime.DATE_MED)} will be almost ${Math.round(DateTime.now().diff(full, 'year').years)} years
+${gender} contact information: ${arr[3]}
+----------------------`;
+
+  console.log(txt)
+  
+});
