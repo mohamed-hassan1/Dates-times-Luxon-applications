@@ -51,11 +51,13 @@ data_arr.forEach(item => {
 
   arr[1] == 'male'? gender = 'his' : gender = 'her';
   
-  txt = `${arr[0]}: ${arr[2]} is born in ${arr[7]} on ${localeTime.toLocaleString(DateTime.DATE_MED)} at ${localeTime.toLocaleString(DateTime.TIME_SIMPLE)}
+  txt += `${arr[0]}: ${arr[2]} is born in ${arr[7]} on ${localeTime.toLocaleString(DateTime.DATE_MED)} at ${localeTime.toLocaleString(DateTime.TIME_SIMPLE)}
 ${gender} age in ${full.toLocaleString(DateTime.DATE_MED)} will be almost ${Math.round(DateTime.now().diff(full, 'year').years)} years
 ${gender} contact information: ${arr[3]}
-----------------------`;
+----------------------\n`;
 
   console.log(txt)
   
 });
+
+fs.writeFileSync('./output.txt', txt, {encoding: 'utf8'})
